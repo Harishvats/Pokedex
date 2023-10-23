@@ -11,6 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.harish.pokemon.R
 import com.harish.pokemon.ui.component.CustomText
+import com.harish.pokemon.ui.component.PokemonCard
 import com.harish.pokemon.ui.component.SearchField
 
 @Composable
@@ -22,6 +23,7 @@ fun PokemonListScreen() {
                 .fillMaxWidth()
                 .padding(bottom = 30.dp, start = 28.dp, end = 28.dp)
         )
+        PokemonCard()
     }
 
 }
@@ -31,7 +33,7 @@ private fun PageHeader() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 28.dp, end = 38.dp,top=63.dp)
+            .padding(start = 28.dp, end = 38.dp, top = 63.dp)
     ) {
 
         CustomText(
@@ -41,7 +43,9 @@ private fun PageHeader() {
             modifier = Modifier.padding(bottom = 10.dp)
         )
         Divider(
-            modifier = Modifier.fillMaxWidth().padding(end = 5.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(end = 5.dp),
             color = Color.Black,
             thickness = 1.dp
         )
