@@ -11,10 +11,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.harish.pokemon.R
 import com.harish.pokemon.ui.component.CustomText
+import com.harish.pokemon.ui.component.SearchField
 
 @Composable
 fun PokemonListScreen() {
-    PageHeader()
+    Column {
+        PageHeader()
+        SearchField(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 30.dp, start = 28.dp, end = 28.dp)
+        )
+    }
+
 }
 
 @Composable
