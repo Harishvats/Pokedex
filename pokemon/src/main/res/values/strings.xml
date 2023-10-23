@@ -1,0 +1,5 @@
+<resources>
+    <string name="title_activity_pokedex">PokedexActivity</string>
+    <string name="pokedex">Pok\u00E9dex</string>
+    <string name="search_pokemon">Search for any Pok\u00E9mon that exists on the planet\n</string>
+</resources>
