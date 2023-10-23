@@ -3,8 +3,10 @@ package com.harish.pokemon.ui.component
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -41,7 +43,12 @@ fun SearchField(modifier: Modifier) {
     val focusManager = LocalFocusManager.current
     var text by remember { mutableStateOf("") }
 
-    Row(modifier = modifier.height(57.dp)) {
+    Row(
+        modifier = modifier.height(57.dp),
+        horizontalArrangement = Arrangement.SpaceAround,
+        verticalAlignment = Alignment.CenterVertically
+
+    ) {
 
 
         BasicTextField(modifier = Modifier
@@ -73,7 +80,10 @@ fun SearchField(modifier: Modifier) {
                         .padding(10.dp)
                 ) {
                     if (text.isEmpty()) {
-                        CustomText(text = stringResource(id = R.string.search_hint))
+                        CustomText(
+                            text = stringResource(id = R.string.search_hint),
+                            textColor = Color.Gray
+                        )
                     }
                     innerTextField()
                 }
@@ -81,7 +91,7 @@ fun SearchField(modifier: Modifier) {
                 Icon(imageVector = ImageVector.vectorResource(id = R.drawable.search_icon),
                     contentDescription = LocalContext.current.getString(R.string.pokedex),
                     modifier = Modifier
-                        .padding(14.dp)
+                        .padding(end = 23.dp, top = 14.dp, bottom = 14.dp)
                         .clickable {
 
                         })
@@ -93,9 +103,9 @@ fun SearchField(modifier: Modifier) {
         Image(painter = painterResource(id = R.drawable.filter_icon),
             contentDescription = LocalContext.current.getString(R.string.pokedex),
             modifier = Modifier
-                .weight(1f)
-                .padding(14.dp)
-                .height(57.dp)
+//                .weight(1f)
+                .padding(top = 4.dp, bottom = 4.dp, start = 22.dp)
+                .fillMaxHeight()
                 .clickable {
 
                 })

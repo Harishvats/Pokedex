@@ -31,7 +31,7 @@ private fun PageHeader() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(28.dp)
+            .padding(start = 28.dp, end = 38.dp,top=63.dp)
     ) {
 
         CustomText(
@@ -41,7 +41,7 @@ private fun PageHeader() {
             modifier = Modifier.padding(bottom = 10.dp)
         )
         Divider(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(end = 5.dp),
             color = Color.Black,
             thickness = 1.dp
         )
