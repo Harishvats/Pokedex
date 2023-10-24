@@ -8,6 +8,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.harish.pokemon.R
 
@@ -19,6 +20,7 @@ fun CustomText(
     textColor: Color = Color.Black, // Default text color,
     fontWeight: Int = 500,
     maxLines: Int = Int.MAX_VALUE,
+    textAlign: TextAlign= TextAlign.Center
 
 ) {
     Text(
@@ -30,6 +32,7 @@ fun CustomText(
             color = textColor,
         ),
         modifier = modifier,
-        maxLines=maxLines
+        maxLines=maxLines,
+        textAlign = textAlign
     )
 }

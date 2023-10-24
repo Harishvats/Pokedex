@@ -8,22 +8,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.harish.pokemon.R
 import com.harish.pokemon.ui.component.CustomText
-import com.harish.pokemon.ui.component.PokemonCard
+import com.harish.pokemon.ui.component.PokemonGrid
 import com.harish.pokemon.ui.component.SearchField
 
 @Composable
 fun PokemonListScreen() {
-    Column {
+    Column(/*modifier = Modifier.verticalScroll(rememberScrollState())*/) {
         PageHeader()
         SearchField(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 30.dp, start = 28.dp, end = 28.dp)
         )
-        PokemonCard()
+        PokemonGrid(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(
+
+                    start = 18.dp,
+                    end = 18.dp
+                )
+        )
     }
 
 }
@@ -40,7 +49,8 @@ private fun PageHeader() {
             text = stringResource(id = R.string.pokedex),
             textSize = 30,
             fontWeight = 700,
-            modifier = Modifier.padding(bottom = 10.dp)
+            modifier = Modifier.padding(bottom = 10.dp),
+            textAlign = TextAlign.Start
         )
         Divider(
             modifier = Modifier
@@ -51,7 +61,8 @@ private fun PageHeader() {
         )
         CustomText(
             text = stringResource(id = R.string.search_pokemon),
-            modifier = Modifier.padding(top = 10.dp, bottom = 10.dp)
+            modifier = Modifier.padding(top = 10.dp, bottom = 10.dp),
+            textAlign = TextAlign.Start
 
         )
 
