@@ -9,7 +9,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.harish.pokemon.ui.theme.TextColor
 
@@ -22,7 +21,6 @@ fun FilterCheckBox(filterName: String) {
             onCheckedChange = { checkedState.value = it },
             colors = CheckboxDefaults.colors(
                 checkedColor = TextColor,
-                uncheckedColor = Color.White
             )
         )
         CustomText(
