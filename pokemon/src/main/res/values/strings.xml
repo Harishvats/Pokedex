@@ -4,4 +4,6 @@
     <string name="search_pokemon">Search for any Pok\u00E9mon that exists on the planet\n</string>
     <string name="search_hint">Name or Number</string>
     <string name="filters">Filters</string>
+    <string name="reset">Reset</string>
+    <string name="apply">Apply</string>
 </resources>
