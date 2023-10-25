@@ -11,13 +11,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import com.harish.pokemon.R
+import com.harish.pokemon.ui.theme.TextColor
 
 @Composable
 fun CustomText(
     modifier: Modifier = Modifier,
     text: String,
     textSize: Int = 16, // Default text size
-    textColor: Color = Color.Black, // Default text color,
+    textColor: Color = TextColor, // Default text color,
     fontWeight: Int = 500,
     maxLines: Int = Int.MAX_VALUE,
     textAlign: TextAlign= TextAlign.Center

@@ -1,4 +1,4 @@
-package com.harish.pokemon.ui.screens
+package com.harish.pokemon.ui.screens.pokemonDetails.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,12 +12,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.harish.pokemon.R
 import com.harish.pokemon.ui.component.CustomText
+import com.harish.pokemon.ui.component.FilterDialog
 import com.harish.pokemon.ui.component.PokemonGrid
 import com.harish.pokemon.ui.component.SearchField
 
 @Composable
 fun PokemonListScreen() {
-    Column(/*modifier = Modifier.verticalScroll(rememberScrollState())*/) {
+    Column() {
         PageHeader()
         SearchField(
             modifier = Modifier
@@ -33,6 +34,9 @@ fun PokemonListScreen() {
                     end = 18.dp
                 )
         )
+
+        FilterDialog()
+
     }
 
 }

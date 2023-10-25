@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.lifecycle.runtime.ktx)
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
+    implementation(libs.navigation.compose)
     //    Compose Image
     implementation(libs.coil.compose)
     testImplementation(libs.junit)
