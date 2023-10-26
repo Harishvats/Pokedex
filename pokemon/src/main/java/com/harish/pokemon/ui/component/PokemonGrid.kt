@@ -6,21 +6,25 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.harish.domain.model.PokemonModel
 
 @Composable
 fun PokemonGrid(
+    pokemonList: List<PokemonModel>,
     modifier: Modifier,
     selectedPokemon: () -> Unit
 ) {
-
-    val list = listOf("Harish", "Bulbasor", "Saursoaus", "sajashaj", "kkj ")
     LazyVerticalGrid(
         modifier = modifier,
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(10.dp),
         content = {
-            items(list.size) {
-                PokemonCard(pokemonName = list[it], pokemonId = it.toString(),selectedPokemon)
+            items(pokemonList.size) {
+                PokemonCard(
+                    pokemonName = pokemonList[it].name,
+                    pokemonId = it.toString(),
+                    selectedPokemon
+                )
             }
         })
 }

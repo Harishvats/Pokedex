@@ -10,8 +10,6 @@ data class PokemonListDTO(
     val count: Int,
     @SerialName("next")
     val next: String,
-    @SerialName("previous")
-    val previous: Any,
     @SerialName("results")
     val pokemonDTOS: List<PokemonDTO>
 )

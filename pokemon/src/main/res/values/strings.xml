@@ -15,4 +15,5 @@
     <string name="types">Types</string>
     <string name="weak">Weak Against\n</string>
     <string name="stats">Stats\n</string>
+    <string name="fetching_pokemons">Fetching Pokemons</string>
 </resources>
