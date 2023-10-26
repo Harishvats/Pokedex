@@ -6,14 +6,16 @@
     <string name="filters">Filters</string>
     <string name="reset">Reset</string>
     <string name="apply">Apply</string>
-    <string name="pokemon">Pokemon\n</string>
+    <string name="pokemon">Pokemon</string>
     <string name="height">Height</string>
-    <string name="weight">Weight\n</string>
+    <string name="weight">Weight</string>
     <string name="gender">Gender(s)</string>
-    <string name="egg_group">Egg Groups\n</string>
+    <string name="egg_group">Egg Groups</string>
     <string name="abilities">Abilities</string>
     <string name="types">Types</string>
-    <string name="weak">Weak Against\n</string>
+    <string name="weak">Weak Against</string>
     <string name="stats">Stats\n</string>
     <string name="fetching_pokemons">Fetching Pokemons</string>
+    <string name="close">Close this page</string>
+    <string name="read_more">Read more</string>
 </resources>

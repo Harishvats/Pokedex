@@ -1,4 +1,4 @@
-package com.harish.pokemon.ui.screens.pokemonDetails.compose
+package com.harish.pokemon.ui.screens.pokemonList.compose
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,7 +18,7 @@ fun PokemonListPageHeader() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start = 28.dp, end = 38.dp, top = 63.dp)
+            .padding(start = 28.dp, end = 38.dp, top = 43.dp)
     ) {
 
         CustomText(

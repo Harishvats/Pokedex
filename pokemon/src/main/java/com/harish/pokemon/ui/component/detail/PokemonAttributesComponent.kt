@@ -12,7 +12,7 @@ import com.harish.pokemon.ui.theme.TextColor
 @Composable
 fun PokemonAttributesComponent(
     attributeName: String,
-    attributeValue: String
+    attributeValue: List<String>
 ) {
 
     Column {
@@ -22,12 +22,20 @@ fun PokemonAttributesComponent(
             fontWeight = FontWeight.Bold.weight,
         )
 
-        CustomText(
-            text = attributeValue,
-            textSize = 16,
-            fontWeight = FontWeight.Normal.weight,
-            textColor = TextColor,
-            modifier = Modifier.padding(top = 2.dp)
-        )
+        attributeValue.forEachIndexed { index, value ->
+            val text = if (index != attributeValue.size - 1) {
+                "$value ${", "}"
+            } else {
+                value
+            }
+
+            CustomText(
+                text = text.substring(0,1).uppercase() + text.substring(1).lowercase(),
+                textSize = 16,
+                fontWeight = FontWeight.Normal.weight,
+                textColor = TextColor,
+                modifier = Modifier.padding(top = 2.dp)
+            )
+        }
     }
 }

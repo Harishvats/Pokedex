@@ -24,7 +24,7 @@ class PokemonDTOToModelMapper @Inject constructor() : Mapper<PokemonDTO, Pokemon
         return PokemonModel(
             name = from.name,
             url = from.url,
-            imageUrl = "",
         )
     }
+
 }

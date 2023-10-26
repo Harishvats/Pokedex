@@ -12,14 +12,24 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.harish.pokemon.ui.theme.Ice
+import com.harish.pokemon.ui.theme.Water
+import com.harish.pokemon.ui.utils.Utils
 
 @Composable
-fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> Unit) {
+fun PokemonCard(
+    pokemonName: String,
+    pokemonId: String,
+    imageUrl: String,
+    selectedPokemon: (String,String) -> Unit
+) {
 
     val stroke = Stroke(
         width = 2f,
@@ -31,19 +41,25 @@ fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> U
         modifier = Modifier
             .width(160.dp)
             .padding(8.dp)
-            .background(Color.Yellow)
-            .drawBehind { drawRoundRect(color = Color.Black, style = stroke) },
+            .background(Brush.verticalGradient(listOf(Water, Ice)))
+            .drawBehind {
+                drawRoundRect(
+                    color = Color.Black,
+                    style = stroke,
+                    cornerRadius = CornerRadius(8f)
+                )
+            },
 
         ) {
         Column(
             modifier = Modifier
                 .padding(10.dp)
                 .align(alignment = Alignment.Center)
-                .clickable { selectedPokemon() }
+                .clickable { selectedPokemon(pokemonId,pokemonName) }
 
         ) {
             CustomImage(
-                data = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+                data = imageUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -54,12 +70,13 @@ fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> U
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomText(
-                text = pokemonName, modifier = Modifier
+                text = pokemonName.replaceFirstChar { firstChar -> firstChar.uppercase() },
+                modifier = Modifier
                     .align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = Modifier.height(8.dp))
             CustomText(
-                text = pokemonId, modifier = Modifier
+                text = Utils.formatId(pokemonId), modifier = Modifier
                     .align(Alignment.CenterHorizontally)
             )
 

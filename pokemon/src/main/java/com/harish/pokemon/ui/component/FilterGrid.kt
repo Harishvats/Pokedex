@@ -10,26 +10,10 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun FilterGrid(modifier: Modifier) {
     val list = listOf(
-        "Harish",
-        "Bulbasor",
-        "Saursoaus",
-        "sajashaj",
-        "kkj ",
-        "Bulbasor",
+        "Type 1",
+        "Type 2",
 
-        "Saursoaus",
-        "sajashaj",
-        "kkj ",
-        "Bulbasor",
-        "Gunjansor",
-        "sajashaj",
-        "kkj ",
-        "sajashaj",
-        "kkj ",
-        "Bulbasor",
-
-
-        )
+    )
     LazyVerticalGrid(
         modifier = modifier,
         columns = GridCells.Fixed(2),

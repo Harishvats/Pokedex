@@ -8,5 +8,4 @@ import javax.inject.Inject
 
 class GetPokemonListUseCase @Inject constructor(private val pokemonRepository: PokemonRepository) {
     suspend operator fun invoke(): Flow<Response<PokemonList>> = pokemonRepository.getPokemonList()
-
 }

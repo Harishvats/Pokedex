@@ -1,6 +1,6 @@
 [versions]
 agp = "8.1.0"
-hilt-navigation-compose = "1.0.0"
+hilt-navigation-compose = "1.1.0"
 org-jetbrains-kotlin-android = "1.8.10"
 core-ktx = "1.12.0"
 junit = "4.13.2"
@@ -12,12 +12,14 @@ compose-bom = "2023.10.01"
 appcompat = "1.6.1"
 material = "1.10.0"
 coil-compose = "2.4.0"
-navigation-compose = "2.7.4"
+navigation-compose = "2.7.5"
 okhttp = "4.11.0"
 retrofit = "2.9.0"
 kotlinx-serialization-converter = "1.0.0"
-hilt-android = "2.47"
+hilt-android = "2.48"
 kotlinx-serialization-json = "1.5.1"
+mockk = "1.13.8"
+kotlinx-coroutines-test = "1.7.3"
 
 
 [libraries]
@@ -46,6 +48,8 @@ retrofit2-kotlinx-serialization-converter = { group = "com.jakewharton.retrofit"
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt-android" }
 hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt-android" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization-json" }
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinx-coroutines-test" }
 
 [plugins]
 com-android-application = { id = "com.android.application", version.ref = "agp" }

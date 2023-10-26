@@ -25,7 +25,7 @@ class PokemonListViewModel @Inject constructor(private val getPokemonListUseCase
         getPokemonList()
     }
 
-    private fun getPokemonList() {
+    fun getPokemonList() {
         viewModelScope.launch {
             getPokemonListUseCase().collect() {
                 when (it) {
@@ -39,5 +39,7 @@ class PokemonListViewModel @Inject constructor(private val getPokemonListUseCase
             }
         }
     }
+
+
 
 }

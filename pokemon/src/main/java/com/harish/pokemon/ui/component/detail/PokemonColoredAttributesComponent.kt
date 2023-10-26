@@ -9,80 +9,57 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.harish.pokemon.ui.component.CustomText
 import com.harish.pokemon.ui.theme.Fire
-import com.harish.pokemon.ui.theme.Flying
 import com.harish.pokemon.ui.theme.TextColor
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
 fun PokemonColoredAttributesComponent(
-    headerText: String
+    title: String, attributes: List<String>
 ) {
 
     Column {
-        Text(
-            text = headerText,
-            style = TextStyle(
-                fontSize = 16.sp,
-                lineHeight = 25.sp,
-                fontWeight = FontWeight.Bold,
-                color = TextColor,
+        CustomText(
+            text = title,
+            textSize = 16,
+            fontWeight = FontWeight.Bold.weight,
+            textColor = TextColor,
+
             )
-        )
 
         FlowRow(
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             modifier = Modifier.padding(top = 2.dp)
         ) {
-            Box(
-                modifier = Modifier
-                    .border(
-                        width = .5.dp,
-                        color = TextColor,
-                        shape = RoundedCornerShape(size = 5.dp)
+            attributes.forEach {
+                Box(
+                    modifier = Modifier
+                        .border(
+                            width = .5.dp,
+                            color = TextColor,
+                            shape = RoundedCornerShape(size = 5.dp)
+                        )
+                        .background(color = Fire, shape = RoundedCornerShape(size = 5.dp))
+                        .padding(top = 2.dp, bottom = 2.dp, start = 5.dp, end = 5.dp),
+                    contentAlignment = Alignment.Center
+                ) {
+                    CustomText(
+                        text = it,
+                        textSize = 16,
+                        fontWeight = FontWeight.Normal.weight,
+                        textColor = TextColor,
+                        textAlign = TextAlign.Center
                     )
-                    .background(color = Fire, shape = RoundedCornerShape(size = 5.dp))
-                    .padding(top = 2.dp, bottom = 2.dp, start = 5.dp, end = 5.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                CustomText(
-                    text = "Fire",
-                    textSize = 16,
-                    fontWeight = FontWeight.Normal.weight,
-                    textColor = TextColor,
-                    textAlign = TextAlign.Center
-                )
+                }
             }
 
-            Box(
-                modifier = Modifier
-                    .border(
-                        width = .5.dp,
-                        color = TextColor,
-                        shape = RoundedCornerShape(size = 5.dp)
-                    )
-                    .background(color = Flying, shape = RoundedCornerShape(size = 5.dp))
-                    .padding(top = 2.dp, bottom = 2.dp, start = 5.dp, end = 5.dp),
-                contentAlignment = Alignment.Center
-            ) {
-                CustomText(
-                    text = "Flying",
-                    textSize = 16,
-                    fontWeight = FontWeight.Normal.weight,
-                    textColor = TextColor,
-                    textAlign = TextAlign.Center
-                )
-            }
         }
 
     }
