@@ -1,4 +1,4 @@
-package com.harish.pokemon.ui.screens.pokemonList.viewmodel
+package com.harish.pokemon.ui.screens.pokemonDetails.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -39,5 +39,7 @@ class PokemonListViewModel @Inject constructor(private val getPokemonListUseCase
             }
         }
     }
+
+
 
 }

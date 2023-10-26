@@ -35,7 +35,7 @@ import androidx.compose.ui.window.PopupProperties
 import com.harish.pokemon.R
 import com.harish.pokemon.ui.component.CustomText
 import com.harish.pokemon.ui.screens.pokemonList.compose.DetailPageHeader
-import com.harish.pokemon.ui.theme.DetailPageBackground
+import com.harish.pokemon.ui.theme.PageBackground
 import com.harish.pokemon.ui.theme.TextColor
 
 @OptIn(ExperimentalLayoutApi::class)
@@ -47,7 +47,7 @@ fun PokemonDetailComponent() {
     Column(
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically),
         modifier = Modifier
-            .background(DetailPageBackground)
+            .background(PageBackground)
             .verticalScroll(rememberScrollState())
     ) {
         DetailPageHeader("Pikacchu", "003")

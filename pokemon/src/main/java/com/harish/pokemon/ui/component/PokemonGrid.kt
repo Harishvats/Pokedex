@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.harish.domain.model.PokemonModel
+import com.harish.pokemon.ui.utils.AppConstants
 
 @Composable
 fun PokemonGrid(
@@ -22,9 +23,13 @@ fun PokemonGrid(
             items(pokemonList.size) {
                 PokemonCard(
                     pokemonName = pokemonList[it].name,
-                    pokemonId = it.toString(),
+                    pokemonId = (it + 1).toString(),
+                    imageUrl = AppConstants.IMG_URL_PREFIX + (it + 1) + AppConstants.IMG_EXT,
                     selectedPokemon
                 )
             }
         })
+
+
 }
+

@@ -1,5 +1,6 @@
 package com.harish.pokemon.ui.component
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -12,14 +13,23 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
+import com.harish.pokemon.ui.utils.Utils
+import com.harish.pokemon.ui.theme.Ice
+import com.harish.pokemon.ui.theme.Water
 
 @Composable
-fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> Unit) {
+fun PokemonCard(
+    pokemonName: String,
+    pokemonId: String,
+    imageUrl: String,
+    selectedPokemon: () -> Unit
+) {
 
     val stroke = Stroke(
         width = 2f,
@@ -31,7 +41,7 @@ fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> U
         modifier = Modifier
             .width(160.dp)
             .padding(8.dp)
-            .background(Color.Yellow)
+            .background(Brush.verticalGradient(listOf(Water, Ice)))
             .drawBehind { drawRoundRect(color = Color.Black, style = stroke) },
 
         ) {
@@ -42,8 +52,9 @@ fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> U
                 .clickable { selectedPokemon() }
 
         ) {
+            Log.d("Harish",imageUrl)
             CustomImage(
-                data = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+                data = imageUrl,
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
@@ -54,12 +65,13 @@ fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> U
             Spacer(modifier = Modifier.height(30.dp))
 
             CustomText(
-                text = pokemonName, modifier = Modifier
+                text = pokemonName.replaceFirstChar { firstChar -> firstChar.uppercase() },
+                modifier = Modifier
                     .align(Alignment.CenterHorizontally)
             )
             Spacer(modifier = Modifier.height(8.dp))
             CustomText(
-                text = pokemonId, modifier = Modifier
+                text = Utils.formatId(pokemonId), modifier = Modifier
                     .align(Alignment.CenterHorizontally)
             )
 

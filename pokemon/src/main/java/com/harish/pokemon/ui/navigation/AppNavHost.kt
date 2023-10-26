@@ -1,6 +1,5 @@
 package com.harish.pokemon.ui.navigation
 
-import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -11,7 +10,7 @@ import com.harish.pokemon.ui.AppConstants.Companion.POKEMON_DETAIL_SCREEN_DESTIN
 import com.harish.pokemon.ui.AppConstants.Companion.POKEMON_LIST_SCREEN_DESTINATION
 import com.harish.pokemon.ui.screens.pokemonDetails.compose.PokemonListScreen
 import com.harish.pokemon.ui.screens.pokemonList.compose.PokemonDetailsScreen
-import com.harish.pokemon.ui.screens.pokemonList.viewmodel.PokemonListViewModel
+import com.harish.pokemon.ui.screens.pokemonDetails.viewmodel.PokemonListViewModel
 
 @Composable
 fun AppNavHost(
