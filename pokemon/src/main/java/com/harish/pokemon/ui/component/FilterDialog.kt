@@ -19,6 +19,7 @@ import androidx.compose.ui.window.Dialog
 @Composable
 fun FilterDialog() {
     val openFilterDialog = remember { mutableStateOf(true) }
+
     when {
         openFilterDialog.value ->
 

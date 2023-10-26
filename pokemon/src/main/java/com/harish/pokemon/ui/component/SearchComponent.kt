@@ -93,7 +93,6 @@ fun SearchField(modifier: Modifier) {
                     modifier = Modifier
                         .padding(end = 23.dp, top = 14.dp, bottom = 14.dp)
                         .clickable {
-
                         })
 
 

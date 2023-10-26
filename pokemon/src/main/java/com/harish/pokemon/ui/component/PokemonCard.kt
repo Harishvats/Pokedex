@@ -1,6 +1,7 @@
 package com.harish.pokemon.ui.component
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -18,7 +19,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun PokemonCard(pokemonName: String, pokemonId: String) {
+fun PokemonCard(pokemonName: String, pokemonId: String, selectedPokemon: () -> Unit) {
 
     val stroke = Stroke(
         width = 2f,
@@ -38,14 +39,16 @@ fun PokemonCard(pokemonName: String, pokemonId: String) {
             modifier = Modifier
                 .padding(10.dp)
                 .align(alignment = Alignment.Center)
+                .clickable { selectedPokemon() }
 
         ) {
             CustomImage(
-                data = "https://images.unsplash.com/photo-1628373383885-4be0bc0172fa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1301&q=80",
+                data = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
                 contentDescription = null,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .height(100.dp).padding(top = 10.dp)
+                    .height(100.dp)
+                    .padding(top = 10.dp)
             )
 
             Spacer(modifier = Modifier.height(30.dp))

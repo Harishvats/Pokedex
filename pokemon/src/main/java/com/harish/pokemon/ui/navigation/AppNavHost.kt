@@ -1,7 +1,6 @@
 package com.harish.pokemon.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -14,11 +13,12 @@ import com.harish.pokemon.ui.screens.pokemonList.compose.PokemonDetailsScreen
 @Composable
 fun AppNavHost(
     navHostController: NavHostController = rememberNavController(),
-    modifier: Modifier,
 ) {
     NavHost(navController = navHostController, startDestination = POKEMON_LIST_SCREEN_DESTINATION) {
         composable(route = POKEMON_LIST_SCREEN_DESTINATION) {
-            PokemonListScreen()
+            PokemonListScreen() {
+                navHostController.navigate(POKEMON_DETAIL_SCREEN_DESTINATION)
+            }
         }
         composable(
             route = POKEMON_DETAIL_SCREEN_DESTINATION,

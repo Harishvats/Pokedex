@@ -9,7 +9,8 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun PokemonGrid(
-    modifier: Modifier
+    modifier: Modifier,
+    selectedPokemon: () -> Unit
 ) {
 
     val list = listOf("Harish", "Bulbasor", "Saursoaus", "sajashaj", "kkj ")
@@ -19,7 +20,7 @@ fun PokemonGrid(
         contentPadding = PaddingValues(10.dp),
         content = {
             items(list.size) {
-                PokemonCard(pokemonName = list[it], pokemonId = it.toString())
+                PokemonCard(pokemonName = list[it], pokemonId = it.toString(),selectedPokemon)
             }
         })
 }
