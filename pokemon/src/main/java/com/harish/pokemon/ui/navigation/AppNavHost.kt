@@ -14,8 +14,8 @@ import com.harish.pokemon.ui.AppConstants.Companion.SELECTED_POKEMON_ID
 import com.harish.pokemon.ui.AppConstants.Companion.SELECTED_POKEMON_NAME
 import com.harish.pokemon.ui.screens.pokemonDetails.compose.PokemonDetailsScreen
 import com.harish.pokemon.ui.screens.pokemonDetails.viewmodel.PokemonDetailsViewModel
-import com.harish.pokemon.ui.screens.pokemonList.compose.PokemonListScreen
 import com.harish.pokemon.ui.screens.pokemonList.viewmodel.PokemonListViewModel
+import com.harish.pokemon.ui.screens.pokemonList.compose.PokemonListScreen
 
 @Composable
 fun AppNavHost(

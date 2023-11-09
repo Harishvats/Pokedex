@@ -23,7 +23,7 @@ import com.harish.pokemon.ui.screens.pokemonList.viewmodel.PokemonListViewModel
 import com.harish.pokemon.ui.theme.PageBackground
 
 @Composable
-fun PokemonListScreen(pokemonListViewModel: PokemonListViewModel, selectedPokemon: (String,String) -> Unit) {
+fun PokemonListScreen(pokemonListViewModel: PokemonListViewModel, selectedPokemon: (String, String) -> Unit) {
     val openFilterDialog = remember { mutableStateOf(false) }
 
     Column(
